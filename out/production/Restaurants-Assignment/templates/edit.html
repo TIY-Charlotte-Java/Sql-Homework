@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Edit this restaurant
+<br>
+
+{{restaurantName}} : {{restaurantCity}} - {{restaurantType}} - {{restaurantRating}}
+<br>
+
+<form action="/edit-restaurant/{{restaurantId}}" method="post">
+    <input type="text" placeholder="Name of restaurant" name="restaurantName" value="{{name}}" width="400"/>
+    <input type="text" placeholder="City of restaurant" name="restaurantCity" value="{{restaurantCity}}" width="400"/>
+    <input type="text" placeholder="Type of restaurant" name="restaurantType" value="{{restaurantType}}" width="400"/>
+    <input type="number" placeholder="Restaurant rating" name="restaurantRating" value="{{restaurantRating}}" width="400"/>
+    <button type="submit">Submit</button>
+</form>
+

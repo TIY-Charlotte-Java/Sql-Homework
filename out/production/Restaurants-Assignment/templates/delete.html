@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+Are you sure you want to delete this restaurant?
+<br>
+<br>
+
+<br>
+<br>
+<form action="/delete/{{restaurantId}}" method="post">
+    <button type="submit">Yes, delete this restaurant</button>
+</form>
+<form action="/No-delete/{{restaurantId}}" method="post">
+    <button type="submit">No, don't delete this restaurant</button>
+</form>
+
+
+</body>
+</html>
