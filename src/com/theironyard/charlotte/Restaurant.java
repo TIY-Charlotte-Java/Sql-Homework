@@ -47,6 +47,18 @@ public class Restaurant {
         return restaurants;
     }
 
+    public static void updateRestaurant(Connection conn, String name, String type, int rating, int id)
+            throws SQLException {
+
+        PreparedStatement stmt = conn.prepareStatement("UPDATE restaurants SET name = ?," +
+                " type = ?, rating = ? WHERE id = ?");
+        stmt.setString(1, name);
+        stmt.setString(2, type);
+        stmt.setInt(3, rating);
+        stmt.setInt(4, id);
+        stmt.execute();
+    }
+
 }
 
 

@@ -67,10 +67,28 @@ public class Main {
                 "/update-restaurant/:id",
                 ((request, response) -> {
                     HashMap m = new HashMap();
+                    int id = Integer.valueOf(request.params("id"));
+
+                    m.put("id", id);
 
                     return new ModelAndView(m, "edit.html");
                 }),
                 new MustacheTemplateEngine()
+        );
+
+        Spark.post(
+                "/update-restaurant/:id",
+                ((request, response) -> {
+                    String name = request.queryParams("name");
+                    String type = request.queryParams("type");
+                    int rating = Integer.valueOf(request.queryParams("rating"));
+                    int id = Integer.valueOf(request.params("id"));
+
+                    Restaurant.updateRestaurant(conn, name, type, rating, id);
+
+                    response.redirect("/");
+                    return "";
+                })
         );
     }
 }

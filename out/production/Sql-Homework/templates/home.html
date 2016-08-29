@@ -17,7 +17,7 @@
     <li>
         <form action="/delete-restaurant/{{id}}" method="post">
             <input type="hidden" value="{{id}}" name="id"/>
-            <button type="submit">Delete</button> {{name}} {{type}} {{rating}}
+            <button type="submit">Delete</button> {{name}} {{type}} {{rating}} <a href="/update-restaurant/{{id}}">  Edit</a>
         </form>
     </li>
     {{/restaurants}}
