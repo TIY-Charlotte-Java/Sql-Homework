@@ -30,6 +30,8 @@ public class Main {
                 ((request, response) -> {
                     HashMap m = new HashMap();
 
+                    m.put("restaurants", Restaurant.selectRestaurants(conn));
+
                     return new ModelAndView(m, "home.html");
                 }),
                 new MustacheTemplateEngine()
@@ -47,6 +49,28 @@ public class Main {
                     response.redirect("/");
                     return "";
                 })
+        );
+
+        Spark.post(
+                "/delete-restaurant/:id",
+                ((request, response) -> {
+                    int id = Integer.valueOf(request.params("id"));
+
+                    Restaurant.deleteRestaurant(conn, id);
+
+                    response.redirect("/");
+                    return "";
+                })
+        );
+
+        Spark.get(
+                "/update-restaurant/:id",
+                ((request, response) -> {
+                    HashMap m = new HashMap();
+
+                    return new ModelAndView(m, "edit.html");
+                }),
+                new MustacheTemplateEngine()
         );
     }
 }

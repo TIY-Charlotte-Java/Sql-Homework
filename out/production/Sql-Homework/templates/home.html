@@ -12,5 +12,16 @@
     <button type="submit">Create</button>
 </form>
 
+<ol>
+    {{#restaurants}}
+    <li>
+        <form action="/delete-restaurant/{{id}}" method="post">
+            <input type="hidden" value="{{id}}" name="id"/>
+            <button type="submit">Delete</button> {{name}} {{type}} {{rating}}
+        </form>
+    </li>
+    {{/restaurants}}
+</ol>
+
 </body>
 </html>
