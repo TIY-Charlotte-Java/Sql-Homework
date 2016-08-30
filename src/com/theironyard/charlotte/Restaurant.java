@@ -128,8 +128,8 @@ public class Restaurant {
 
     public static ArrayList<Restaurant> searchRestaurant(Connection conn, String nameSearch) throws SQLException {
         PreparedStatement preparedStatement =
-                conn.prepareStatement("SELECT * FROM restaurants WHERE LOWER(name) LIKE '%?%'");
-        preparedStatement.setObject(1, nameSearch);
+                conn.prepareStatement("SELECT * FROM restaurants WHERE LOWER(name) LIKE ?");
+        preparedStatement.setString(1, "%" + nameSearch + "%");
         ResultSet results = preparedStatement.executeQuery();
         ArrayList<Restaurant> restaurantsListSearch = new ArrayList<>();
         while (results.next()) {

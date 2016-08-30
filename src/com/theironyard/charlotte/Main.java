@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
@@ -18,6 +19,8 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         Statement stmt = conn.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS restaurants (id IDENTITY, name VARCHAR, city VARCHAR, type VARCHAR, rating INT)"); // create restaurants database
+
+        //System.out.println(Restaurant.searchRestaurant(conn, "Jimmy"));
 
         Spark.get(
                 "/",
@@ -134,12 +137,14 @@ public class Main {
                 "/search",
                 ((request, response) -> {
 
-                    String restaurantSearch = request.params("restaurantSearch").toLowerCase();
+                    String search = request.queryParams("restaurantSearch");
 
-                    HashMap m = new HashMap<>();
-                    m.put("search", Restaurant.searchRestaurant(conn, restaurantSearch));
+                    //Restaurant.searchRestaurant(conn, search);
 
-                    return new ModelAndView(m, "search.html");
+                    HashMap s = new HashMap<>();
+                    s.put("searchRestaurant", Restaurant.searchRestaurant(conn, search));
+
+                    return new ModelAndView(s, "search.html");
 
                 }),
                 new MustacheTemplateEngine()
