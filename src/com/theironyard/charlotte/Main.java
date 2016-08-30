@@ -132,17 +132,15 @@ public class Main {
                 })
         );
 
-// maybe all i need is a get method for the search...i just can't seem to figure out how to route after I have appended the search param into the URL in home.html
+        //didn't even need a post, just use get for the search function
         Spark.get(
                 "/search",
                 ((request, response) -> {
 
-                    String search = request.queryParams("restaurantSearch");
-
-                    //Restaurant.searchRestaurant(conn, search);
+                    String search = request.queryParams("restaurantSearch"); // get the string of what they searched for
 
                     HashMap s = new HashMap<>();
-                    s.put("searchRestaurant", Restaurant.searchRestaurant(conn, search));
+                    s.put("searchRestaurant", Restaurant.searchRestaurant(conn, search)); // use my search method and put in hashmap
 
                     return new ModelAndView(s, "search.html");
 
