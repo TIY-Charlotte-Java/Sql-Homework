@@ -1,0 +1,25 @@
+{
+  "name": "restaurant-angular",
+  "version": "1.0.0",
+  "description": "Let's write Databases!",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abryrath/Sql-Homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abryrath/Sql-Homework/issues"
+  },
+  "homepage": "https://github.com/abryrath/Sql-Homework#readme"
+}

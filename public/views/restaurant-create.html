@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>Create New Restaurant</h1>
+    <form novalidate="novalidate" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantName">Restaurant Name:</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantName" ng-model="restaurant.name"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantAddress">Address:</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantAddress" ng-model="restaurant.address"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantCity">City:</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantCity" ng-model="restaurant.city"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantState">State:</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantState" ng-model="restaurant.state"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantZipcode">Zipcode:</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantZipcode" ng-model="restaurant.zipcode"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantCuisine">Type of Cuisine:</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantCuisine" ng-model="restaurant.cuisine"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantType">Type of Restaurant</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantType" ng-model="restaurant.type"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputRestaurantPrice">Price (1-5):</label>
+            <div class="controls">
+                <input type="text" id="inputRestaurantPrice" ng-model="restaurant.price"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="createNewRestaurant()" class="btn btn-small btn-primary">Create New Restaurant</a>
+            </div>
+        </div>
+    </form>
+</div>
