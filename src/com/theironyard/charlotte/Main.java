@@ -30,7 +30,9 @@ public class Main {
                 ((request, response) -> {
                     HashMap m = new HashMap();
 
+
                     m.put("restaurants", Restaurant.selectRestaurants(conn));
+
 
                     return new ModelAndView(m, "home.html");
                 }),
@@ -67,6 +69,7 @@ public class Main {
                 "/update-restaurant/:id",
                 ((request, response) -> {
                     HashMap m = new HashMap();
+
                     int id = Integer.valueOf(request.params("id"));
 
                     m.put("id", id);
@@ -90,5 +93,17 @@ public class Main {
                     return "";
                 })
         );
+//
+//        Spark.post(
+//                "/search",
+//                ((request, response) -> {
+//                    String search = request.queryParams("search");
+//
+//                    Restaurant.searchRestaurants(conn, search);
+//
+//                    response.redirect("/");
+//                    return "";
+//                })
+//        );
     }
 }
