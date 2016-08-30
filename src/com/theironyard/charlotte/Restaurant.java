@@ -71,19 +71,22 @@ public class Restaurant {
         stmt.setString(3, type);
         stmt.setInt(4, rating);
         stmt.execute();
+        // static method returns nothing, accepts connection and restaurant attributes.
+        // inserting a new restaurant into restaurants table
     }
 
     public static void deleteRestaurant(Connection conn, int id) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM restaurants WHERE id = ?");
         stmt.setInt(1, id);
         stmt.execute();
+        // delete restaurant from restaurants table where id is the input number
     }
 
     public static ArrayList<Restaurant> selectRestaurant(Connection conn) throws SQLException {
         ArrayList<Restaurant> restaurantsList = new ArrayList<>();
-        Statement stmt = conn.createStatement();
+        Statement stmt = conn.createStatement(); // create a statement and execute sql query
         ResultSet results = stmt.executeQuery("SELECT * FROM restaurants");
-        while (results.next()) {
+        while (results.next()) { // while we have restaurants to process, get column values
             int id = results.getInt("id");
             String name = results.getString("name");
             String city = results.getString("city");
@@ -92,6 +95,7 @@ public class Restaurant {
             restaurantsList.add(new Restaurant(id, name, city, type, rating));
         }
         return restaurantsList;
+        // this is put my results of select * from restaurants into an arraylist
     }
 
     public static void updateRestaurant(Connection conn, String name, String city, String type, int rating, int id)
@@ -104,24 +108,42 @@ public class Restaurant {
         stmt.setInt(4, rating);
         stmt.setInt(5, id);
         stmt.execute();
+        //update restaurant based on id from the input
     }
 
     public static Restaurant specificRestaurant(Connection conn, int id) throws SQLException {
-        PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM restaurants WHERE id = ?");
-        preparedStatement.setObject(1, id);
-        ResultSet results = preparedStatement.executeQuery();
-        Restaurant restaurantObject = null;
+        PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM restaurants WHERE id = ?"); // first prepare statement
+        preparedStatement.setObject(1, id); // set the id
+        ResultSet results = preparedStatement.executeQuery(); // execute the prepared statement I created
+        Restaurant restaurantObject = null; // create empty object
         while (results.next()) {
             String name = results.getString("name");
             String city = results.getString("city");
             String type = results.getString("type");
             int rating = results.getInt("rating");
-            restaurantObject = new Restaurant(id, name, city, type, rating);
+            restaurantObject = new Restaurant(id, name, city, type, rating); // put the restaurant with that id into the new restaurant object
         }
         return restaurantObject;
     }
 
+    public static ArrayList<Restaurant> searchRestaurant(Connection conn, String nameSearch) throws SQLException {
+        PreparedStatement preparedStatement =
+                conn.prepareStatement("SELECT * FROM restaurants WHERE LOWER(name) LIKE '%?%'");
+        preparedStatement.setObject(1, nameSearch);
+        ResultSet results = preparedStatement.executeQuery();
+        ArrayList<Restaurant> restaurantsListSearch = new ArrayList<>();
+        while (results.next()) {
+            int id = results.getInt("id");
+            String name = results.getString("name");
+            String city = results.getString("city");
+            String type = results.getString("type");
+            int rating = results.getInt("rating");
+            restaurantsListSearch.add(new Restaurant(id, name, city, type, rating));
+        }
+        return restaurantsListSearch;
     }
+
+}
 
 
 

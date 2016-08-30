@@ -1,16 +1,24 @@
 <!DOCTYPE html>
+<h1 style="color:blue;">Restaurants Rated</h1>
+<p> Add, Edit or Delete Restaurants.</p>
+<br>
 
 <form action="/create-restaurant" method="post">
     <input type="text" placeholder="Name of restaurant" name="restaurantName" width="400"/>
     <input type="text" placeholder="City of restaurant" name="restaurantCity" width="400"/>
     <input type="text" placeholder="Type of restaurant" name="restaurantType" width="400"/>
     <input type="number" placeholder="Restaurant rating" name="restaurantRating" width="400"/>
-    <button type="submit">Submit</button>
+    <button type="submit">Add restaurant</button>
+</form>
+
+<form action="/search" method="get">
+    <input type="text" placeholder="Search restaurant name" name="restaurantSearch" width="400"/>
+    <button type="submit">Search for restaurant</button>
 </form>
 
 <ol>
     {{#restaurantsAll}}
-    <li>Id: {{id}} Name: {{name}}, City: {{city}},  Type: {{type}}, Rating: {{rating}}
+    <li><strong>Name:</strong> {{name}},  <strong>City:</strong> {{city}},  <strong>Type:</strong> {{type}},  <strong>Rating:</strong> {{rating}}
         <a href="/edit/{{id}}">Edit</a>
         <a href="/delete/{{id}}">Delete</a></li>
     {{/restaurantsAll}}
