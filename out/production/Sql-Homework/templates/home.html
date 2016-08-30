@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<form action="/create-restaurant" method="post">
+    <input type="text" placeholder="Name" name="name"/>
+    <input type="text" placeholder="Type" name="type"/>
+    <input type="text" placeholder="Rating" name="rating"/>
+    <button type="submit">Create</button>
+</form>
+<br>
+<ol>
+    {{#restaurants}}
+    <li>
+        <form action="/delete-restaurant/{{id}}" method="post">
+            <input type="hidden" value="{{id}}" name="id"/>
+            <button type="submit">Delete</button> {{name}} {{type}} {{rating}} <a href="/update-restaurant/{{id}}">  Edit</a>
+        </form>
+    </li>
+    {{/restaurants}}
+</ol>
+
+
+</body>
+</html>
