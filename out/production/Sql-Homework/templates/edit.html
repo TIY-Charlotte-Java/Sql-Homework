@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+Current Information:
+<br> {{name}} - {{type}}, {{rating}} rating
+<br>
+Enter new information below...
+<br>
+<br>
+<form action="/edit-restaurant/{{id}}" method="post">
+    <input type="hidden" placeholder="ID" name="id" value="{{id}}">
+    <input type="text" placeholder="Name" name="name" value="{{name}}"/>
+    <input type="text" placeholder="Type of food" name="type" value="{{type}}"/>
+    <input type="number" placeholder="Rating" name="rating" value="{{rating}}"/>
+    <button type="submit">Submit</button>
+</form>

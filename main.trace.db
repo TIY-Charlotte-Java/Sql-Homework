@@ -20,3 +20,33 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
+2016-08-30 19:30:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE WHERE[*] RESTAURANTS VALUES (NULL, ?, ?, ?) "; expected "identifier"; SQL statement:
+DELETE WHERE restaurants VALUES (NULL, ?, ?, ?) [42001-191]
+2016-08-30 19:30:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE WHERE[*] RESTAURANTS *  "; expected "identifier"; SQL statement:
+DELETE WHERE restaurants *  [42001-191]
+2016-08-30 19:31:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE WHERE[*] * RESTAURANTS "; expected "identifier"; SQL statement:
+DELETE WHERE * restaurants [42001-191]
+2016-08-30 19:32:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE FROM RESTAURANTS WHERE *[*] "; expected "NOT, EXISTS, INTERSECTS, SELECT, FROM"; SQL statement:
+DELETE FROM restaurants WHERE * [42001-191]
+2016-08-30 19:32:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE FROM RESTAURANTS *[*] "; SQL statement:
+DELETE FROM restaurants * [42000-191]
+2016-08-30 19:32:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM RESTAURANTS "; expected "identifier"; SQL statement:
+DELETE * FROM restaurants [42001-191]
+2016-08-30 19:33:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM RESTAURANTS WHERE ID = * "; expected "identifier"; SQL statement:
+DELETE * FROM restaurants WHERE id = * [42001-191]
+2016-08-30 19:33:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE FROM RESTAURANTS WHERE ID = *[*] "; expected "ALL, ANY, SOME, SELECT, FROM"; SQL statement:
+DELETE FROM restaurants WHERE id = * [42001-191]
+2016-08-30 19:33:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ALL" not found; SQL statement:
+DELETE ALL restaurants [42102-191]
+2016-08-30 19:58:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+INSERT INTO users VALUES (NULL, ?, ?, ?) [42102-191]
