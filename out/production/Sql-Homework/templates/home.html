@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+Here's your list of restaurants!
+<br>
+<br>
+Enter a new one below!
+<br>
+<br>
+<form action="/create-restaurant" method="post">
+    <input type="text" placeholder="Restaurant Name" value="{{name}}" name="name"/>
+    <input type="text" placeholder="Type of food?" value="{{type}}" name="type"/>
+    <input type="number" placeholder="Rating" value="{{rating}}" name="rating"/>
+    <button type="submit">Submit </button>
+</form>
+<ol>
+    {{#restaurants}}
+    <li> {{name}}, {{type}}, {{rating}} rating.
+        <form action="/delete-restaurant" method="post">
+            <input type="hidden" value="{{id}}" name="deleteID">
+            <button type="submit">Delete</button>
+        </form>
+        <a href="/edit/{{id}}">Edit</a>
+    </li>
+    {{/restaurants}}
+</ol>
+</body>
+</html>
