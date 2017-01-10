@@ -6,6 +6,9 @@
 </head>
 <body>
 
+<!--mustache templeton which take the different fields and renders onto the page,
+this is what you want the Model and view to pick up-->
+
 <ul>
     {{#restaurant}}
     <li>{{name}}</li>
@@ -33,10 +36,5 @@
     <input type="submit" />
 </form>
 
-<form method="post" action = "/delete-restaurant">
-    ID:
-    <input type ="text" name="id"/>
-    <input type="submit"/>
-</form>
 </body>
 </html>
