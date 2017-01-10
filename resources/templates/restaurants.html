@@ -8,14 +8,17 @@
 <h1>Restaurants!</h1>
 <ul>
     {{#restaurants}}
+    <li>{{id}}</li>
     <li>{{name}}</li>
-    <li>{{location}}</li>
     <li>{{cuisine}}</li>
+    <li>{{location}}</li>
     <li>{{rating}}</li>
 
     Click To Edit:
     <a href="/restaurants/{{id}}">Edit</a>
     {{/restaurants}}
+
+
 </ul>
 
 
@@ -24,16 +27,27 @@
     Name:
     <input type="text" name="name" />
 
-    Address:
-    <input type="text" name="location" />
-
     Cuisine:
     <input type="text" name="cuisine" />
+
+    Location:
+    <input type="text" name="location" />
 
     Rating:
     <input type="text" name="rating" />
 
     <input type="submit" />
 </form>
+
+<!--this creates a form which looks at the post method and the action - /delete-restaurant
+what ever text that is coming in which is the id number it will be delted using the post method-->
+
+<form method="post" action = "/delete-restaurant">
+    ID:
+    <input type ="text" name="id"/>
+    <input type="submit"/>
+</form>
+
+
 </body>
 </html>

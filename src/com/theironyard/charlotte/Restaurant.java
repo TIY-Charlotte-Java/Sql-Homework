@@ -4,6 +4,7 @@ package com.theironyard.charlotte;
  * Created by emileenmarianayagam on 1/9/17.
  */
 public class Restaurant {
+    int id;
     String name;
     String cuisine;
     String location;
@@ -13,11 +14,27 @@ public class Restaurant {
 
     }
 
-    public Restaurant(String name, String cuisine, String location,int rating) {
+    public Restaurant(String name, String cuisine, String location, int rating) {
         this.name = name;
         this.cuisine = cuisine;
         this.location = location;
         this.rating = rating;
+    }
+
+    public Restaurant(int id, String name, String cuisine, String location, int rating) {
+        this.id = id;
+        this.name = name;
+        this.cuisine = cuisine;
+        this.location = location;
+        this.rating = rating;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
