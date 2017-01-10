@@ -11,9 +11,6 @@ import java.util.HashMap;
 
 public class Main {
 
-
-
-
     public static void insertRestaurant(Connection conn, String name, String cusine,String location,int rating) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO restaurant VALUES (NULL, ?, ?, ?, ?)");
         stmt.setString(1, name);
@@ -44,13 +41,6 @@ public class Main {
 
     }
 
-    public static void updateRestaurant(Connection conn, String name) throws SQLException{
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM restaurant");
-        stmt.setString(1, name);
-        stmt.execute();
-
-    }
-
     private static ArrayList<Restaurant> restaurants = new ArrayList<>();
 
     public static void main(String[] args) throws SQLException{
@@ -61,26 +51,11 @@ public class Main {
         //if not exitsts
         stmt.execute("CREATE TABLE IF NOT EXISTS restaurant (id IDENTITY, name VARCHAR, cuisine VARCHAR, location VARCHAR,rating int)");
 
-
-        restaurants.add(new Restaurant("pizza hut","","20 mosley,",4));
+        restaurants.add(new Restaurant("pizza hut","american","20 mosley,",4));
         restaurants.add(new Restaurant("singapore gardens","chines","225 queen street",3));
         restaurants.add(new Restaurant("chicken coop", "souther","225 tryon",5));
 
-
-
-        Spark.post("/create-restaurant", (req, res) -> {
-            restaurants.add(
-                    new Restaurant(Integer.valueOf(
-                            req.queryParams("name")),
-                            req.queryParams("cuisine"),
-                            req.queryParams("location"),
-                            Integer.valueOf(req.queryParams("rating"))));
-
-            res.redirect("/");
-            return "";
-
-        });
-
+        //getting the restaurant info
         Spark.get("/restaurants", (req, res) -> {
             HashMap m = new HashMap();
 
@@ -89,6 +64,39 @@ public class Main {
             return new ModelAndView(m,"restaurants.html");
 
         }, new MustacheTemplateEngine());
+
+
+        Spark.post("/create-restaurant", (req, res) -> {
+            insertRestaurant(conn,
+                            req.queryParams("name"),
+                            req.queryParams("cuisine"),
+                            req.queryParams("location"),
+                            Integer.valueOf(req.queryParams("rating")));
+
+
+            return new ModelAndView(selectRestaurant(conn), "restaurants.html");
+            //res.redirect("/restaurants");
+
+        },new MustacheTemplateEngine());
+
+
+
+
+
+      /*  Spark.post("/create-restaurant", (req, res) -> {
+            restaurants.add(
+                    new Restaurant(
+                            req.queryParams("name"),
+                            req.queryParams("cuisine"),
+                            req.queryParams("location"),
+                            Integer.valueOf(req.queryParams("rating"))));
+
+            res.redirect("/");
+            return "";
+
+        });*/
+
+
 
 
 
