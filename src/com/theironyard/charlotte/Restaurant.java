@@ -1,5 +1,8 @@
 package com.theironyard.charlotte;
 
+import java.sql.*;
+import java.util.ArrayList;
+
 /**
  * Created by kelseynewman on 1/9/17.
  */
@@ -67,5 +70,66 @@ public class Restaurant {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public static void insertRestaurant(Connection conn, Restaurant r) throws SQLException {
+        //build restaurant object and pass that in
+        //instead of String name, String location, String cuisine, int rating
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ?)");
+        stmt.setString(1, r.getName());
+        stmt.setString(2, r.getLocation());
+        stmt.setString(3, r.getCuisine());
+        stmt.setInt(4, r.getRating());
+        stmt.execute();
+    }
+
+    public static void deleteRestaurant(Connection conn, int id) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM restaurants WHERE id = ?");
+        stmt.setInt(1, id);
+        stmt.execute();
+    }
+
+    public static ArrayList<Restaurant> selectRestaurants(Connection conn) throws SQLException {
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        Statement stmt = conn.createStatement();
+        ResultSet results = stmt.executeQuery("SELECT * FROM restaurants");
+        while (results.next()) {
+            int id = results.getInt("id");
+            String name = results.getString("name");
+            String location = results.getString("location");
+            String cuisine = results.getString("cuisine");
+            int rating = results.getInt("rating");
+
+            restaurants.add(new Restaurant(id, name, location, cuisine, rating));
+        }
+        return restaurants;
+    }
+
+    public static Restaurant getRestaurantById (Connection conn, int id) throws SQLException {
+        Restaurant restaurant = null;
+        PreparedStatement stmt = conn.prepareStatement("select * from restaurants where id = ?");
+        stmt.setInt(1, id);
+
+        ResultSet results = stmt.executeQuery();
+
+        if (results.next()) {
+            String name = results.getString("name");
+            String location = results.getString("location");
+            String cuisine = results.getString("cuisine");
+            int rating = results.getInt("rating");
+            restaurant = new Restaurant(id, name, location, cuisine, rating);
+        }
+        return restaurant;
+    }
+
+
+    public static void updateRestaurant (Connection conn, Restaurant r ) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("update restaurants set name = ?, location = ?, cuisine = ?, rating = ? where id = ?");
+        stmt.setString(1, r.getName());
+        stmt.setString(2, r.getLocation());
+        stmt.setString(3, r.getCuisine());
+        stmt.setInt(4, r.getRating());
+        stmt.setInt(5, r.getId());
+        stmt.execute();
     }
 }

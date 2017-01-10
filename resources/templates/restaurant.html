@@ -7,11 +7,10 @@
 <body>
 <ul>
     {{#restaurant}}
-    <li>{{id}}</li>
-    <li>{{name}}</li>
-    <li>{{location}}</li>
-    <li>{{cuisine}}</li>
-    <li>{{rating}}</li>
+    <li>Name: {{name}}</li>
+    <li>Location: {{location}}</li>
+    <li>Type of Cuisine: {{cuisine}}</li>
+    <li>Rating: {{rating}}</li>
 
     {{/restaurant}}
 </ul>
@@ -21,7 +20,7 @@
     Name:
     <input type="text" name="name" />
 
-    Address:
+    Location:
     <input type="text" name="location" />
 
     Type:
