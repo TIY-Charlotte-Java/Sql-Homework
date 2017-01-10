@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+</head>
+<body>
+<h1>Change Restaurant Info:</h1>
+<ul>
+    {{#restaurant}}
+    <!--<li>Id: {{id}}</li>-->
+    <li>Name: {{name}}</li>
+    <li>Location: {{location}}</li>
+    <li>Type: {{foodType}}</li>
+    <li>Rating: {{rating}}</li>
+    <a href="/">Home</a>
+    {{/restaurant}}
+</ul>
+
+<form method="post">
+    Name:
+    <input type="text" name="name" />
+
+    Location:
+    <input type="text" name="location" />
+
+    FoodType:
+    <input type="text" name="foodType" />
+
+    Rating:
+    <input type="double" name="rating" />
+    <input type="submit" />
+</form>
+<br>
+</body>
+</html>
