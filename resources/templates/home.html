@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+Hello! Welcome to Charlotte. Here are a few local restaurants you might want to try:
+<ul>
+    {{#restaurants}}
+    {{id}}
+    <li>{{name}}</li>
+    <li>{{location}}</li>
+    <li>{{cuisine}}</li>
+    <li>{{rating}}</li>
+    <br>
+    {{/restaurants}}
+    <br>
+Click the link below if you would like to add one of your favorite restaurants to list!
+    <br>
+    <a href="/create-restaurant">Restaurants!</a>
+</ul>
+</body>
+</html>
