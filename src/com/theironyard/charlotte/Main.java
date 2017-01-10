@@ -20,13 +20,15 @@ public class Main {
         stmt.execute();
     }
 
+
+
     public static ArrayList<Restaurant> selectRestaurant(Connection conn) throws SQLException {
         ArrayList<Restaurant> items = new ArrayList<>();
         Statement stmt = conn.createStatement();
         ResultSet results = stmt.executeQuery("SELECT * FROM restaurant");
         while (results.next()) {
             String name = results.getString("name");
-            String cuisine = results.getString("cusine");
+            String cuisine = results.getString("cuisine");
             String location = results.getString("location");
             int rating = results.getInt("rating");
             items.add(new Restaurant(name,cuisine,location,rating));
@@ -41,9 +43,10 @@ public class Main {
 
     }
 
-    private static ArrayList<Restaurant> restaurants = new ArrayList<>();
+    //private static ArrayList<Restaurant> restaurants = new ArrayList<>();
 
     public static void main(String[] args) throws SQLException{
+
 
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
@@ -51,11 +54,14 @@ public class Main {
         //if not exitsts
         stmt.execute("CREATE TABLE IF NOT EXISTS restaurant (id IDENTITY, name VARCHAR, cuisine VARCHAR, location VARCHAR,rating int)");
 
+        ArrayList<Restaurant> restaurants = selectRestaurant(conn);
+
         restaurants.add(new Restaurant("pizza hut","american","20 mosley,",4));
         restaurants.add(new Restaurant("singapore gardens","chines","225 queen street",3));
         restaurants.add(new Restaurant("chicken coop", "souther","225 tryon",5));
 
         //getting the restaurant info
+        // "/" entered go to the restatures
         Spark.get("/restaurants", (req, res) -> {
             HashMap m = new HashMap();
 
@@ -67,15 +73,17 @@ public class Main {
 
 
         Spark.post("/create-restaurant", (req, res) -> {
+            //helps to insert the entered website to the table
             insertRestaurant(conn,
                             req.queryParams("name"),
                             req.queryParams("cuisine"),
                             req.queryParams("location"),
                             Integer.valueOf(req.queryParams("rating")));
 
+            res.redirect("/restaurants");
+            return new ModelAndView(conn,"restaurants.html");
+            //return new ModelAndView(selectRestaurant(conn), "restaurants.html");
 
-            return new ModelAndView(selectRestaurant(conn), "restaurants.html");
-            //res.redirect("/restaurants");
 
         },new MustacheTemplateEngine());
 
