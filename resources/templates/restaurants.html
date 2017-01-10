@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+</head>
+<body>
+<h1>Restaurants!</h1>
+<ul>
+    {{#restaurants}}
+    <li>{{id}}</li>
+    <li>{{name}}</li>
+    <li>{{phone}}</li>
+    <li>{{type}}</li>
+    <li>{{isOpen}}</li>
+
+    Click To Edit:
+    <a href="/restaurants/{{id}}">Edit</a>
+    {{/restaurants}}
+</ul>
+
+
+<form method="post" action="/create-restaurant">
+    Id:
+    <input type="text" name="id" />
+
+    Name:
+    <input type="text" name="name" />
+
+    Phone Number:
+    <input type="text" name="phone" />
+
+    Type:
+    <input type="text" name="type" />
+
+    Is it open:
+    <input type="text" name="isOpen" />
+
+    <input type="submit" />
+</form>
+</body>
+</html>
