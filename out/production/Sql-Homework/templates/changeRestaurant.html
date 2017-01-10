@@ -5,20 +5,19 @@
     <title>Restaurants</title>
 </head>
 <body>
-<h1>Restaurants!</h1>
+<h1>Change Restaurant Info:</h1>
 <ul>
-    {{#restaurants}}
+    {{#restaurant}}
     <!--<li>Id: {{id}}</li>-->
     <li>Name: {{name}}</li>
     <li>Location: {{location}}</li>
     <li>Type: {{foodType}}</li>
     <li>Rating: {{rating}}</li>
-    Click To Edit:
-    <a href="/restaurants/{{id}}">Edit</a>
-    {{/restaurants}}
+    <a href="/">Home</a>
+    {{/restaurant}}
 </ul>
-<h1>Create Restaurants</h1>
-<form method="post" action="/create-restaurant">
+
+<form method="post">
     Name:
     <input type="text" name="name" />
 
@@ -30,15 +29,8 @@
 
     Rating:
     <input type="double" name="rating" />
-
     <input type="submit" />
 </form>
 <br>
-<h1>Delete Restaurants</h1>
-<form method="post" action="/delete-restaurant">
-    Name:
-    <input type="text" name="name" />
-    <input type="submit" />
-</form>
 </body>
 </html>
