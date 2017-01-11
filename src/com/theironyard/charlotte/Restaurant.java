@@ -122,7 +122,6 @@ public class Restaurant {
         return restaurant;
     }
 
-
     public static void updateRestaurant (Connection conn, Restaurant r ) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("update restaurants set name = ?, location = ?, cuisine = ?, rating = ? where id = ?");
         stmt.setString(1, r.getName());
@@ -131,5 +130,22 @@ public class Restaurant {
         stmt.setInt(4, r.getRating());
         stmt.setInt(5, r.getId());
         stmt.execute();
+    }
+
+    public static ArrayList<Restaurant> searchRestaurants (Connection conn, String searchName) throws SQLException {
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        PreparedStatement stmt = conn.prepareStatement("select * from restaurants where upper(name) LIKE ?");
+        stmt.setString(1, "%" + searchName.toUpperCase() + "%");
+        ResultSet results = stmt.executeQuery();
+        while (results.next()) {
+            int id = results.getInt("id");
+            String name = results.getString("name");
+            String location = results.getString("location");
+            String cuisine = results.getString("cuisine");
+            int rating = results.getInt("rating");
+
+            restaurants.add(new Restaurant(id, name, location, cuisine, rating));
+        }
+        return restaurants;
     }
 }

@@ -6,10 +6,11 @@ import spark.Spark;
 import spark.template.mustache.MustacheTemplateEngine;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
-    //put SQL methods into Restaurant class
+
 
     public static void main(String[] args) throws SQLException {
         Server.createWebServer().start();
@@ -19,7 +20,6 @@ public class Main {
 
         Spark.get("/", ((req, res) ->{
             HashMap model = new HashMap();
-
             model.put("restaurants", Restaurant.selectRestaurants(conn));
 
             return new ModelAndView(model, "home.html");
@@ -27,7 +27,6 @@ public class Main {
 
         Spark.get("/create-restaurant", ((req, res) ->{
             HashMap model = new HashMap();
-
             model.put("restaurants", Restaurant.selectRestaurants(conn));
 
             return new ModelAndView(model, "restaurants.html");
@@ -81,5 +80,13 @@ public class Main {
             return "";
         });
 
+        Spark.get("/search-restaurants", ((req,res) ->{
+            String name = req.queryParams("name");
+            HashMap model = new HashMap();
+            if (name != null) {
+                model.put("restaurants", Restaurant.searchRestaurants(conn, name));
+            }
+            return new ModelAndView(model, "search.html");
+        }), new MustacheTemplateEngine());
     }
 }
