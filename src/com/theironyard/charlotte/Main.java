@@ -11,14 +11,17 @@ import java.util.HashMap;
 
 public class Main {
 
-    public static void insertRestaurant(Connection conn, String name, String cusine,String location,int rating) throws SQLException {
+    //insert method which creates connection -- name,cuisine,location and rating
+    //we do not need a id as the values are injected an id will be created in the table
+    public static void insertRestaurant(Connection conn, String name, String cuisine,String location,int rating) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ? )");
         stmt.setString(1, name);
-        stmt.setString(2,cusine);
+        stmt.setString(2,cuisine);
         stmt.setString(3,location);
         stmt.setInt(4,rating);
         stmt.execute();
     }
+
 
     public static ArrayList<Restaurant> selectRestaurant(Connection conn) throws SQLException {
         ArrayList<Restaurant> items = new ArrayList<>();
