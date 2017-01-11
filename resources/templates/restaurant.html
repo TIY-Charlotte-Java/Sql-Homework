@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    {{#restaurant}}
+    <li>{{name}}</li>
+    <li>{{type}}</li>
+    <li>{{location}}</li>
+    {{/restaurant}}
+
+</ul>
+
+<form method="post">
+
+    Name:
+    <input type="text" name="name"/>
+
+    Type:
+    <input type="text" name="type"/>
+
+    Location:
+    <input type="text" name="location"/>
+
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
