@@ -1,0 +1,223 @@
+2017-01-10 14:57:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO RESTAURANTS VALUES (NULL, ?, ?, ?, ?, ? [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ?, ? [42001-191]
+2017-01-10 15:11:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO RESTAURANTS VALUES (NULL, ?, ?, ?, ?, ? [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ?, ? [42001-191]
+2017-01-10 15:16:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO RESTAURANTS VALUES (NULL, ?, ?, ?, ?, ? [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ?, ? [42001-191]
+2017-01-10 15:30:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO RESTAURANTS VALUES (NULL, ?, ?, ?, ?, ? [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ?, ? [42001-191]
+2017-01-10 15:35:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO RESTAURANTS VALUES (NULL, ?, ?, ?, ?, ? [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO restaurants VALUES (NULL, ?, ?, ?, ?, ? [42001-191]
+2017-01-10 16:01:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+SELECT * FROM restaurants where id = ? [90012-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:109)
+	at org.h2.command.Command.executeQuery(Command.java:201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:179)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-10 16:14:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE RESTAURANTS SET NAME ?[*], ADDRESS ?, TYPE ?, PRICE ?, RATING ?) "; expected "., ="; SQL statement:
+UPDATE restaurants SET name ?, address ?, type ?, price ?, rating ?) [42001-191]
+2017-01-10 16:19:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE RESTAURANTS SET NAME ?[*], ADDRESS ?, TYPE ?, PRICE ?, RATING ? WHERE ID = ? "; expected "., ="; SQL statement:
+UPDATE restaurants SET name ?, address ?, type ?, price ?, rating ? WHERE ID = ? [42001-191]
+2017-01-10 23:18:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME COLLATE[*] SQL_LATIN1_GENERAL_CP1_CI_AS LIKE '% = ?%'  "; SQL statement:
+SELECT * FROM restaurants where name COLLATE SQL_Latin1_General_CP1_CI_AS LIKE '% = ?%'  [42000-191]
+2017-01-10 23:18:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME COLLATE[*] SQL_LATIN1_GENERAL_CP1_CI_AS LIKE '% = ?%'  "; SQL statement:
+SELECT * FROM restaurants where name COLLATE SQL_Latin1_General_CP1_CI_AS LIKE '% = ?%'  [42000-191]
+2017-01-10 23:23:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME COLLATE[*] SQL_LATIN1_GENERAL_CP1_CI_AS LIKE '% = ?%'  "; SQL statement:
+SELECT * FROM restaurants where name COLLATE SQL_Latin1_General_CP1_CI_AS LIKE '% = ?%'  [42000-191]
+2017-01-10 23:23:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME COLLATE[*] SQL_LATIN1_GENERAL_CP1_CI_AS LIKE '% = ?%'  "; SQL statement:
+SELECT * FROM restaurants where name COLLATE SQL_Latin1_General_CP1_CI_AS LIKE '% = ?%'  [42000-191]
+2017-01-10 23:24:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME COLLATE[*] SQL_CI = ?  "; SQL statement:
+SELECT * FROM restaurants where name COLLATE SQL_CI = ?  [42000-191]
+2017-01-11 00:11:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME CI[*] LIKE '%= ?%' "; SQL statement:
+SELECT * FROM restaurants where name CI LIKE '%= ?%' [42000-191]
+2017-01-11 00:11:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME CI[*] LIKE '%= ?%' "; SQL statement:
+SELECT * FROM restaurants where name CI LIKE '%= ?%' [42000-191]
+2017-01-11 00:11:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME CI[*] LIKE '%= ?%' "; SQL statement:
+SELECT * FROM restaurants where name CI LIKE '%= ?%' [42000-191]
+2017-01-11 00:12:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1406)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:355)
+	at com.theironyard.charlotte.Restaurant.selectRestaurantsByName(Restaurant.java:114)
+	at com.theironyard.charlotte.Main.lambda$main$7(Main.java:87)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-11 00:13:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1406)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:355)
+	at com.theironyard.charlotte.Restaurant.selectRestaurantsByName(Restaurant.java:114)
+	at com.theironyard.charlotte.Main.lambda$main$7(Main.java:87)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-11 00:13:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1406)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:355)
+	at com.theironyard.charlotte.Restaurant.selectRestaurantsByName(Restaurant.java:114)
+	at com.theironyard.charlotte.Main.lambda$main$7(Main.java:87)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-11 00:14:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE %[*]?%  "; expected "SELECT, FROM"; SQL statement:
+SELECT * FROM restaurants where name LIKE %?%  [42001-191]
+2017-01-11 00:17:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1406)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:355)
+	at com.theironyard.charlotte.Restaurant.selectRestaurantsByName(Restaurant.java:114)
+	at com.theironyard.charlotte.Main.lambda$main$7(Main.java:87)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-11 00:17:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1406)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:355)
+	at com.theironyard.charlotte.Restaurant.selectRestaurantsByName(Restaurant.java:114)
+	at com.theironyard.charlotte.Main.lambda$main$7(Main.java:87)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-11 00:18:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1406)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:355)
+	at com.theironyard.charlotte.Restaurant.selectRestaurantsByName(Restaurant.java:114)
+	at com.theironyard.charlotte.Main.lambda$main$7(Main.java:87)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
