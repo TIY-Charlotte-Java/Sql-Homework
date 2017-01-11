@@ -7,15 +7,29 @@
 <body>
 <h1>Restaurants!</h1>
 <ul>
+    <table style="width:100%", border="1px solid black">
+        <tr>
+            <th width="10%">ID</th>
+            <th width="18%">Name</th>
+            <th width="18%">Phone</th>
+            <th width="18%">Type</th>
+            <th width="18%">Is Open</th>
+            <th width="9%">Edit</th>
+            <th width="9%"> Delete</th>
+        </tr>
+    </table>
     {{#restaurants}}
-    <li>{{id}}</li>
-    <li>{{name}}</li>
-    <li>{{phone}}</li>
-    <li>{{type}}</li>
-    <li>{{isOpen}}</li>
-
-    Click To Edit:
-    <a href="/restaurants/{{id}}">Edit</a>
+    <table style="width:100%", border="1px solid black">
+        <tr align="center">
+            <td width="10%">{{id}}</td>
+            <td width="18%">{{name}}</td>
+            <td width="18%">{{phone}}</td>
+            <td width="18%">{{type}}</td>
+            <td width="18%">{{isOpen}}</td>
+            <td width="9%"><a href="/restaurants/{{id}}">Edit</a></td>
+            <td width="9%"><a href="/delete-restaurant/{{id}}">Delete</a> </td>
+        </tr>
+    </table>
     {{/restaurants}}
 </ul>
 
