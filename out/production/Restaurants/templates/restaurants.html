@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+</head>
+<body>
+<a href="/restaurant-search">Search For a Tasty Restaurant</a>
+<h1>Restaurants</h1>
+<ul>
+    <table border = "1" cellpadding = "5" cellspacing = "5">
+        <tr bgcolor = "#48c9b0">
+            <th>Name</th>
+            <th>Address</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Edit</th>
+        </tr>
+        {{#restaurants}}
+        <tr bgcolor = "#FFC300">
+            <td>{{name}}</td>
+            <td>{{address}}</td>
+            <td>{{type}}</td>
+            <td>{{price}}</td>
+            <td>{{rating}}</td>
+            <td> <a href="/restaurant/{{id}}">Edit</a></td>
+        </tr>
+        {{/restaurants}}
+    </table>
+</ul>
+
+<h2>Create a new Restaurant!</h2>
+<form  method="post" action="/create-restaurant">
+    Name:
+    <input type="text" name="name" />
+
+    Address:
+    <input type="text" name="address" />
+
+    Type:
+    <input type="text" name="type" />
+
+    Price:
+    <input type="text" name="price" />
+
+    Rating:
+    <input type="text" name="rating" />
+
+    <input type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Search</title>
+</head>
+<body>
+<a href="/restaurants">Back To All Restaurants</a>
+
+<h2>Search for a Tasty Restaurant</h2>
+<form method="get">
+    Name:
+    <input type="text" name="name" />
+
+    <input type="submit" />
+</form>
+<h2> Restaurant Results</h2>
+<table border = "1" cellpadding = "5" cellspacing = "5">
+    <tr bgcolor = "#48c9b0">
+        <th>Name</th>
+        <th>Address</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Edit</th>
+    </tr>
+    {{#restaurants}}
+    <tr bgcolor = "#FFC300">
+        <td>{{name}}</td>
+        <td>{{address}}</td>
+        <td>{{type}}</td>
+        <td>{{price}}</td>
+        <td>{{rating}}</td>
+        <td> <a href="/restaurant/{{id}}">Edit</a></td>
+    </tr>
+    {{/restaurants}}
+
+</table>
+</body>
+</html>
