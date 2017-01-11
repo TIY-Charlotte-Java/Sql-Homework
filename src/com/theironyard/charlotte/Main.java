@@ -66,10 +66,8 @@ public class Main {
             String location = results.getString("location");
             int rating = results.getInt("rating");
             item = new Restaurant(id,name,cuisine,location,rating);
-
         }
         return item;
-
     }
 
 
@@ -141,9 +139,5 @@ public class Main {
             res.redirect("/");
             return "";
         });
-
     }
-
-
-
 }

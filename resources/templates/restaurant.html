@@ -7,19 +7,21 @@
 <body>
 
 <!--mustache templeton which take the different fields and renders onto the page,
-this is what you want the Model and view to pick up-->
+this is what you want the Model and view to pick up
+this template is passed when it is called in the Modelview-->
 
 <ul>
-    {{}}
+<!--# list the field-->
     {{#restaurant}}
     <li>{{name}}</li>
     <li>{{cuisine}}</li>
     <li>{{location}}</li>
     <li>{{rating}}</li>
     {{/restaurant}}
-    {{}}
 </ul>
 
+<!--this creates a post with attributes the are listed below and whatever informaiton that is
+entered into these fields are assigned to the fields that were created in the restaurant class-->
 
 <form method="post" >
 

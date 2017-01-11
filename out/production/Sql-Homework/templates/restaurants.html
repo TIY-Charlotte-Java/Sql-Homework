@@ -7,6 +7,8 @@
 <body>
 <h1>Restaurants!</h1>
 <ul>
+<!--#markes a list-->
+    <!--creates a list of items that have id,name,cuisine,location,rating-->
     {{#restaurants}}
     <li>{{id}}</li>
     <li>{{name}}</li>
@@ -43,6 +45,7 @@
 what ever text that is coming in which is the id number it will be delted using the post method-->
 
 <form method="post" action = "/delete-restaurant">
+    <h3>Please select a restaurant that you want to delete -- Enter restaurant id #</h3>
     ID:
     <input type ="text" name="id"/>
     <input type="submit"/>
