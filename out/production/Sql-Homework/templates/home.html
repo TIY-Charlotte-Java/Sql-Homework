@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<h1>Hello! Welcome to Charlotte :) </h1>
+<br>
+Here are a few local restaurants you might want to try:
+<ul>
+    {{#restaurants}}
+    {{id}}
+    <li>Name: {{name}}</li>
+    <li>Location: {{location}}</li>
+    <li>Type of Cuisine: {{cuisine}}</li>
+    <li>Rating: {{rating}}</li>
+    <br>
+    {{/restaurants}}
+    <br>
+    <h2>Don't see what you're looking for?</h2>
+Click the link below if you would like to add one of your favorite restaurants to list!
+    (or delete an existing one)
+    <br>
+    <a href="/create-restaurant">Restaurants!</a>
+    <br>
+    <br>
+    You can also enter the name of the restaurant you are looking for below!
+   <form method="get" action="/search-restaurants">
+
+    Name:
+    <input type="text" name="name"/> <button type="submit">Search</button>
+
+   </form>
+</ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+2017-01-11 07:47:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "IF[*] EXISTS(SELECT * FROM RESTAURANTS WHERE NAME = ? "; expected "INSERT, {"; SQL statement:
+IF EXISTS(select * from restaurants where name = ? [42001-191]
+2017-01-11 07:53:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "IF[*] EXISTS(SELECT * FROM RESTAURANTS WHERE NAME = ? "; expected "INSERT, {"; SQL statement:
+IF EXISTS(select * from restaurants where name = ? [42001-191]
+2017-01-11 07:54:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "IF[*] EXISTS(SELECT * FROM RESTAURANTS WHERE NAME = ? "; expected "INSERT, {"; SQL statement:
+IF EXISTS(select * from restaurants where name = ? [42001-191]
+2017-01-11 10:13:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:14:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:26:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:28:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:31:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:31:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:31:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] = ? "; SQL statement:
+select * from restaurants where (upper)name = ? [42000-191]
+2017-01-11 10:35:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] LIKE '%?%' "; SQL statement:
+select * from restaurants where (upper)name LIKE '%?%' [42000-191]
+2017-01-11 10:40:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] LIKE ? "; SQL statement:
+select * from restaurants where (upper)name LIKE ? [42000-191]
+2017-01-11 10:46:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE (UPPER)NAME[*] LIKE ? "; SQL statement:
+select * from restaurants where (upper)name LIKE ? [42000-191]

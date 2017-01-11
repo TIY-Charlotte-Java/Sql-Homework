@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+</head>
+<body>
+<h1>Restaurants!</h1>
+<ul>
+    {{#restaurants}}
+    {{id}}
+    <li>Name: {{name}}</li>
+    <li>Location: {{location}}</li>
+    <li>Type of Cuisine: {{cuisine}}</li>
+    <li>Rating: {{rating}}</li>
+
+    Click To Edit:
+    <a href="/restaurants/{{id}}">Edit</a>
+    <br>
+    <br>
+    {{/restaurants}}
+</ul>
+Add a new restaurant:
+<form method="post" action="/create-restaurant">
+
+    Name:
+    <input type="text" name="name" />
+
+    Location:
+    <input type="text" name="location" />
+
+    Cuisine:
+    <input type="text" name="cuisine" />
+
+    Rating:
+    <input type="text" name="rating"/>
+
+    <input type="submit" />
+</form>
+<br>
+<form method="post" action="/delete-restaurant">
+    Enter the ID for the restaurant you would like to delete:
+    <br>
+    ID:
+    <input type="text" name="id"/>
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>
