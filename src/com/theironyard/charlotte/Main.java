@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 public class Main {
 
+
     public static void main(String[] args) throws SQLException {
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
@@ -52,27 +53,26 @@ public class Main {
                     return "";
                 });
 
+        Spark.post("/restaurants/:id", (request, response) -> {
+            int id = Integer.valueOf(request.params(("id")));
+            Restaurant current = Restaurant.getRestaurantById(conn, id);
+
+            current.setName(request.queryParams("name"));
+            current.setType(request.queryParams("type"));
+            current.setLocation(request.queryParams("location"));
+
+            Restaurant.updateRestaurant(conn, current);
+            response.redirect("/");
+            return "";
+        });
+
         Spark.get("/restaurants/:id", (request, response) -> {
             HashMap m = new HashMap();
 
             int id = Integer.valueOf(request.params("id"));
-            m.put("restaurants",  Restaurant.getRestaurantById(conn, id));
+            m.put("restaurants", Restaurant.getRestaurantById(conn, id));
 
             return new ModelAndView(m, "restaurant.html");
-        });
-
-         Spark.post("/restaurants/:id", (request, response) -> {
-             int id = Integer.valueOf(request.queryParams(("id")));
-             Restaurant current = Restaurant.getRestaurantById(conn, id);
-
-             current.setName(request.queryParams("name"));
-             current.setType(request.queryParams("type"));
-             current.setLocation(request.queryParams("location"));
-             current.setId(Integer.valueOf(request.queryParams("id")));
-             Restaurant.updateRestaurant(conn, current.name, current.type, current.location, current.id); //ask ben
-
-             response.redirect("/");
-             return "";
-         });
+        }, new MustacheTemplateEngine());
     }
 }

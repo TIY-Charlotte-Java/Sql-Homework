@@ -65,6 +65,7 @@ public class Restaurant {
         stmt.setString(3, location);
         stmt.execute();
     }
+
     public static ArrayList<Restaurant> selectRestaurant(Connection conn) throws SQLException {
         ArrayList<Restaurant> restaurants = new ArrayList<>();
         Statement stmt = conn.createStatement();
@@ -78,31 +79,34 @@ public class Restaurant {
         }
         return restaurants;
     }
+
     public static void deleteRestaurant(Connection conn, int id) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM restaurants WHERE id = ? ");
         stmt.setInt(1, id);
         stmt.execute();
     }
 
-    public static void updateRestaurant(Connection conn, String name, String type, String location, int id) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("UPDATE restaurants SET name = ?, type = ?, location = ?, int = WHERE id = ?");
-        stmt.setString(1,name);
-        stmt.setString(2, type);
-        stmt.setString(3,location);
-        stmt.setInt(4, id);
+    public static void updateRestaurant(Connection conn, Restaurant r) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("UPDATE restaurants SET name = ?, type = ?, location = ? WHERE id = ?");
+        stmt.setString(1, r.getName());
+        stmt.setString(2, r.getType());
+        stmt.setString(3, r.getLocation());
+        stmt.setInt(4, r.getId());
+        stmt.execute();
     }
+
     public static Restaurant getRestaurantById(Connection conn, int id) throws SQLException {
         Restaurant ID = null;
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM restaurants WHERE id = ?");
         stmt.setInt(1, id);
+        stmt.execute();
+        ResultSet results = stmt.executeQuery();
 
-        ResultSet results = stmt.executeQuery("SELECT * FROM restaurants");
-
-        while (results.next()) {
+        if (results.next()) {
             String name = results.getString("name");
             String type = results.getString("type");
             String location = results.getString("location");
-            ID = (new Restaurant(id, name, type, location));
+            ID = new Restaurant(id, name, type, location);
         }
         return ID;
     }
