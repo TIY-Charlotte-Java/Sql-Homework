@@ -14,8 +14,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    //private static ArrayList<Restaurant> restaurants = new ArrayList<>();
-    static HashMap searchResults = new HashMap();
 
     public static void main(String[] args) throws SQLException {
 
@@ -80,14 +78,13 @@ public class Main {
             return "";
         });
         Spark.get("/restaurant-search",(req,res) ->{
+            String name = req.queryParams("name");
+            HashMap searchResults = new HashMap();
+            if (name != null) {
+                searchResults.put("restaurants", Restaurant.selectRestaurantsByName(conn, name));
+            }
             return new ModelAndView(searchResults, "restaurant-search.html");
         }, new MustacheTemplateEngine());
-
-        Spark.post("/restaurant-search",(req, res) ->{
-            searchResults.put("restaurants", Restaurant.selectRestaurantsByName(conn, req.queryParams("name")));
-            res.redirect("/restaurant-search");
-            return "";
-        });
     }
 }
 

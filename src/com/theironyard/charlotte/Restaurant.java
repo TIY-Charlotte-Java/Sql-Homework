@@ -110,8 +110,8 @@ public class Restaurant {
     }
     public static ArrayList<Restaurant> selectRestaurantsByName(Connection conn, String searchName) throws SQLException{
         ArrayList<Restaurant> restaurants = new ArrayList<>();
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM restaurants where upper(name) = ?");
-        stmt.setString(1, searchName.toUpperCase());
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM restaurants where upper(name) LIKE ? " );
+        stmt.setString(1, "%" + searchName.toUpperCase() + "%");
         ResultSet nameResults =  stmt.executeQuery();
         while (nameResults.next()){
             restaurants.add(populateRestaurant(nameResults));
