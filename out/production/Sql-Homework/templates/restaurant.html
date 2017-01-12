@@ -5,13 +5,14 @@
     <title>Restaurant</title>
 </head>
 <body>
+<h1>Selected Restaurant</h1>
 
 <!--mustache templeton which take the different fields and renders onto the page,
 this is what you want the Model and view to pick up
 this template is passed when it is called in the Modelview-->
 
 <ul>
-<!--# list the field-->
+<!--# list the field , ID is not required as it is a single restaurant object-->
     {{#restaurant}}
     <li>{{name}}</li>
     <li>{{cuisine}}</li>
@@ -20,9 +21,10 @@ this template is passed when it is called in the Modelview-->
     {{/restaurant}}
 </ul>
 
-<!--this creates a post with attributes the are listed below and whatever informaiton that is
+<!--this creates a post with attributes the are listed below and whatever information that is
 entered into these fields are assigned to the fields that were created in the restaurant class-->
 
+<!--acton is not required because the post will render to the page-->
 <form method="post" >
 
     Name:
@@ -39,6 +41,7 @@ entered into these fields are assigned to the fields that were created in the re
 
     <input type="submit" />
 </form>
+
 
 </body>
 </html>

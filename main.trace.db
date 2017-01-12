@@ -302,3 +302,39 @@ UPDATE restaurant SET name = ?, cusine =?,  location =?, rating =? WHERE ID = ? 
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
 	at java.lang.Thread.run(Thread.java:745)
+2017-01-11 11:03:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 13:00:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 13:49:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 13:50:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 13:54:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 14:00:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 14:29:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] '%?%' "; SQL statement:
+SELECT * FROM restaurants where name like = '%?%' [42000-191]
+2017-01-11 14:30:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] ? "; SQL statement:
+SELECT * FROM restaurants where name like = ? [42000-191]
+2017-01-11 14:30:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] ? "; SQL statement:
+SELECT * FROM restaurants where name like = ? [42000-191]
+2017-01-11 14:30:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] ? "; SQL statement:
+SELECT * FROM restaurants where name like = ? [42000-191]
+2017-01-11 14:30:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] ? "; SQL statement:
+SELECT * FROM restaurants where name like = ? [42000-191]
+2017-01-11 14:30:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM RESTAURANTS WHERE NAME LIKE =[*] ? "; SQL statement:
+SELECT * FROM restaurants where name like = ? [42000-191]

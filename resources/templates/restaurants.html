@@ -10,12 +10,16 @@
 <!--#markes a list-->
     <!--creates a list of items that have id,name,cuisine,location,rating-->
     {{#restaurants}}
-    <li>{{id}}</li>
-    <li>{{name}}</li>
-    <li>{{cuisine}}</li>
-    <li>{{location}}</li>
-    <li>{{rating}}</li>
+    <!--ID is entered in her so that it can be displayed on the page # this is taken from the SQL table-->
 
+    <li>ID: {{id}}</li>
+    <li>Name: {{name}}</li>
+    <li>Cuisine: {{cuisine}}</li>
+    <li>Location: {{location}}</li>
+    <li>Rating: {{rating}}</li>
+
+
+   <!-- //allow us to edit the restaurant class-->
     Click To Edit:
     <a href="/restaurants/{{id}}">Edit</a>
     {{/restaurants}}
@@ -50,6 +54,15 @@ what ever text that is coming in which is the id number it will be delted using 
     <input type ="text" name="id"/>
     <input type="submit"/>
 </form>
+
+<p>
+
+</p>
+Click To Edit:
+<a href="/restaurant-search">search for a restaurant</a>
+
+
+<form method="get"></form>
 
 
 </body>
