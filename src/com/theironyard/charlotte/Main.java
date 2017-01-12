@@ -131,7 +131,7 @@ public class Main {
             return "";
         });
 
-// creates a post and returns nothing as we are sending info to the server
+        // creates a post and returns nothing as we are sending info to the server
         //"/restaurants/:id -->goes to the set url
         Spark.post("/restaurants/:id", (req, res) ->{
             //create an int id from the parameter that is passed in by the id
