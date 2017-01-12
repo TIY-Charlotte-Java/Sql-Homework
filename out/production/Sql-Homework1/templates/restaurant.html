@@ -8,14 +8,9 @@
 <h1>Restaurant Edit</h1>
 <ul>
     {{#restaurant}}
-    <table style="width:100%">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Type</th>
-            <th>Is Open</th>
-        </tr>
+
+    Current Restaurant:
+    <table style="width:60%">
         <tr>
             <th>{{id}}</th>
             <th>{{name}}</th>
@@ -24,35 +19,31 @@
             <th>{{isOpen}}</th>
         </tr>
     </table>
-    <li>{{id}}</li>
-    <li>{{name}}</li>
-    <li>{{phone}}</li>
-    <li>{{type}}</li>
-    <li>{{isOpen}}</li>
+
+    <form method="post">
+        Id:
+        <input type="text" name="id" />
+
+        Name:
+        <input type="text" name="name" />
+
+        Phone Number:
+        <input type="text" name="phone" />
+
+        Type:
+        <input type="text" name="type" />
+
+        Is it open:
+        <input type="text" name="isOpen" />
+
+        <input type="submit" />
+    </form>
+    <form method="post" action="/delete-restaurant">
+        Delete? :
+        <input type="hidden" value="{{id}}" name="id"/>
+        <button type="submit">Delete</button>
+    </form>
     {{/restaurant}}
 </ul>
-<form method="post">
-    Id:
-    <input type="text" name="id" />
-
-    Name:
-    <input type="text" name="name" />
-
-    Phone Number:
-    <input type="text" name="phone" />
-
-    Type:
-    <input type="text" name="type" />
-
-    Is it open:
-    <input type="text" name="isOpen" />
-
-    <input type="submit" />
-</form>
-<form method="post" action="/delete-restaurant">
-    Delete? Enter Restaurant ID to Confirm:
-    <input type="text" name="id" />
-    <input type="submit" name="Delete" />
-</form>
 </body>
 </html>

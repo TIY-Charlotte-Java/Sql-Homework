@@ -26,8 +26,14 @@
             <td width="18%">{{phone}}</td>
             <td width="18%">{{type}}</td>
             <td width="18%">{{isOpen}}</td>
-            <td width="9%"><a href="/restaurants/{{id}}">Edit</a></td>
-            <td width="9%"><a href="/delete-restaurant/{{id}}">Delete</a> </td>
+            <td width="9%"><form method="get" action="/restaurants/{{id}}">
+                <input type="hidden" value="{{id}}" name="id"/>
+                <button type="submit">Edit</button>
+            </form></td>
+            <td width="9%"><form method="post" action="/delete-restaurant">
+                <input type="hidden" value="{{id}}" name="id"/>
+                <button type="submit">Delete</button>
+            </form> </td>
         </tr>
     </table>
     {{/restaurants}}

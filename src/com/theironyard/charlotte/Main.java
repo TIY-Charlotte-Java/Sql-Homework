@@ -51,6 +51,7 @@ public class Main {
         return current;
     }
 
+
     public static void deleteRestaurant(Connection conn, int id) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM restaurants WHERE ID = ?");
         stmt.setInt(1, id);
@@ -159,5 +160,30 @@ public class Main {
             return "";
 
         });
+
+//        Spark.get("/delete-restaurant/:id", (req, res) -> {
+//            int id = Integer.valueOf(req.params("id"));
+//            Restaurant current = getRestaurantById(conn, id);
+//            HashMap m = new HashMap();
+//            if (current != null) {
+//                m.put("restaurant", current);
+//
+//            }
+//            return new ModelAndView(m, "restaurants.html");
+//        }, new MustacheTemplateEngine());
+//
+//        Spark.post("/delete-restaurant/:id", (req, res) -> {
+//            int id = Integer.valueOf(req.params("id"));
+//
+//            Restaurant current = getRestaurantById(conn, id);
+//            current.setId(Integer.valueOf(req.queryParams("id")));
+//
+//            deleteRestaurant(conn, id);
+//
+//            res.redirect("/");
+//
+//            return "";
+//
+//        });
     }
 }
