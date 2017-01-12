@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search for a Restaurant</title>
+</head>
+<body>
+<h1>Enter a Restaurant that you would like to search for </h1>
+<ul>
+    <!--the restaurants is taken from the hashmap htat is created in the -->
+    <!--# list the field , ID is not required as it is a single restaurant object-->
+    <!--restaurants is the key in the hashmap that it look to get the information-->
+    {{#restaurants}}
+    <li>{{name}}</li>
+    <li>{{cuisine}}</li>
+    <li>{{location}}</li>
+    <li>{{rating}}</li>
+    {{/restaurants}}
+
+</ul>
+
+<form method="get">
+    Name:
+    <input type="text" name="name" />
+    <input type="submit" />
+</form>
+<p>
+
+</p>
+
+Click To Go Back to Restaurants:
+<a href="/">Click</a>
+
+</body>
+</html>

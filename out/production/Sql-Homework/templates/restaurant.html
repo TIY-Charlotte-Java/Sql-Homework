@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+</head>
+<body>
+<h1>Selected Restaurant</h1>
+
+<!--mustache templeton which take the different fields and renders onto the page,
+this is what you want the Model and view to pick up
+this template is passed when it is called in the Modelview-->
+
+<ul>
+<!--# list the field , ID is not required as it is a single restaurant object-->
+    {{#restaurant}}
+    <li>{{name}}</li>
+    <li>{{cuisine}}</li>
+    <li>{{location}}</li>
+    <li>{{rating}}</li>
+    {{/restaurant}}
+</ul>
+
+<!--this creates a post with attributes the are listed below and whatever information that is
+entered into these fields are assigned to the fields that were created in the restaurant class-->
+
+<!--acton is not required because the post will render to the page-->
+<form method="post" >
+
+    Name:
+    <input type="text" name="name" />
+
+    Cuisine:
+    <input type="text" name="cuisine" />
+
+    Location:
+    <input type="text" name="location" />
+
+    Rating:
+    <input type="text" name="rating" />
+
+    <input type="submit" />
+</form>
+
+
+</body>
+</html>

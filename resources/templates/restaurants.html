@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+</head>
+<body>
+<h1>Restaurants!</h1>
+<ul>
+<!--#markes a list-->
+    <!--creates a list of items that have id,name,cuisine,location,rating-->
+    {{#restaurants}}
+    <!--ID is entered in her so that it can be displayed on the page # this is taken from the SQL table-->
+
+    <li>ID: {{id}}</li>
+    <li>Name: {{name}}</li>
+    <li>Cuisine: {{cuisine}}</li>
+    <li>Location: {{location}}</li>
+    <li>Rating: {{rating}}</li>
+
+
+   <!-- //allow us to edit the restaurant class-->
+    Click To Edit:
+    <a href="/restaurants/{{id}}">Edit</a>
+    {{/restaurants}}
+
+
+</ul>
+
+
+<form method="post" action="/create-restaurant">
+
+    Name:
+    <input type="text" name="name" />
+
+    Cuisine:
+    <input type="text" name="cuisine" />
+
+    Location:
+    <input type="text" name="location" />
+
+    Rating:
+    <input type="text" name="rating" />
+
+    <input type="submit" />
+</form>
+
+<!--this creates a form which looks at the post method and the action - /delete-restaurant
+what ever text that is coming in which is the id number it will be delted using the post method-->
+
+<form method="post" action = "/delete-restaurant">
+    <h3>Please select a restaurant that you want to delete -- Enter restaurant id #</h3>
+    ID:
+    <input type ="text" name="id"/>
+    <input type="submit"/>
+</form>
+
+<p>
+
+</p>
+Click To Edit:
+<a href="/restaurant-search">search for a restaurant</a>
+
+
+<form method="get"></form>
+
+
+</body>
+</html>
